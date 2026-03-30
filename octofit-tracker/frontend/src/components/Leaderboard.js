@@ -17,15 +17,32 @@ const Leaderboard = () => {
   }, [apiUrl]);
 
   return (
-    <div className="container mt-4">
-      <h2>Leaderboard</h2>
-      <ul className="list-group">
-        {leaderboard.map((entry, idx) => (
-          <li key={idx} className="list-group-item">
-            {entry.user} - {entry.points} pts (Rank: {entry.rank})
-          </li>
-        ))}
-      </ul>
+    <div className="card mb-4 shadow-sm">
+      <div className="card-body">
+        <h2 className="card-title text-warning mb-4">Leaderboard</h2>
+        <div className="table-responsive">
+          <table className="table table-striped table-hover">
+            <thead className="table-dark">
+              <tr>
+                <th>#</th>
+                <th>User</th>
+                <th>Points</th>
+                <th>Rank</th>
+              </tr>
+            </thead>
+            <tbody>
+              {leaderboard.map((entry, idx) => (
+                <tr key={idx}>
+                  <td>{idx + 1}</td>
+                  <td>{entry.user}</td>
+                  <td>{entry.points}</td>
+                  <td>{entry.rank}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };

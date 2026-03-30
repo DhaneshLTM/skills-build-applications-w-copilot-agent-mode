@@ -39,14 +39,18 @@ function App() {
         </div>
       </nav>
       <div className="container mt-4">
-        <Routes>
-          <Route path="/activities" element={<Activities />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/teams" element={<Teams />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/workouts" element={<Workouts />} />
-          <Route path="/" element={<h2>Welcome to OctoFit Tracker!</h2>} />
-        </Routes>
+        <div className="card shadow-sm mb-4">
+          <div className="card-body">
+            <Routes>
+              <Route path="/activities" element={<Activities />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/teams" element={<Teams />} />
+              <Route path="/users" element={<Users />} />
+              <Route path="/workouts" element={<Workouts />} />
+              <Route path="/" element={<h1 className="display-4 mb-3 text-primary">Welcome to <span className="fw-bold">OctoFit Tracker</span>!</h1>} />
+            </Routes>
+          </div>
+        </div>
       </div>
     </Router>
   );

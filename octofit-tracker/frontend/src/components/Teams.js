@@ -17,15 +17,30 @@ const Teams = () => {
   }, [apiUrl]);
 
   return (
-    <div className="container mt-4">
-      <h2>Teams</h2>
-      <ul className="list-group">
-        {teams.map((team, idx) => (
-          <li key={idx} className="list-group-item">
-            {team.name} - {team.description}
-          </li>
-        ))}
-      </ul>
+    <div className="card mb-4 shadow-sm">
+      <div className="card-body">
+        <h2 className="card-title text-info mb-4">Teams</h2>
+        <div className="table-responsive">
+          <table className="table table-striped table-hover">
+            <thead className="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {teams.map((team, idx) => (
+                <tr key={idx}>
+                  <td>{idx + 1}</td>
+                  <td>{team.name}</td>
+                  <td>{team.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
